@@ -25,17 +25,10 @@ def test_registration(browser_management):
     browser.element('#submit').press_enter()
 
     browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
-    browser.element('.table-responsive').should(have.text(
-    'Madina ABDULAEVA' and
-    'i@mabdulaeva.ru' and
-    'Female' and
-    '9258880099' and
-    '20 October,1998' and
-    'AUTOtests' and
-    'Music' and
-    'plumeria.jpg' and
-    'Jerome Hanks Str., h.149, apt.09' and
-    'Uttar Pradesh Karnal' ))
+    browser.all('tbody tr td:last-child').should(have.exact_texts('Madina ABDULAEVA', 'i@mabdulaeva.ru', 'Female', '9258880099', '20 October,1998', 'AUTOtests',
+                         'Music', 'plumeria.jpg', 'Jerome Hanks Str., h.149, apt.09', 'Uttar Pradesh Karnal'))
 
     browser.element('#closeLargeModal').press_enter()
+
+
 
