@@ -17,7 +17,7 @@ def test_registration(browser_management):
     browser.element('#subjectsInput').type('AUTOtests')
     browser.element('#hobbies-checkbox-3').double_click()
 
-    browser.element('#uploadPicture').send_keys(os.path.abspath('pictures/plumeria.jpg'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('picture/plumeria.jpg'))
     browser.element('#currentAddress').type('Jerome Hanks Str., h.149, apt.09')
 
     browser.element('#react-select-3-input').type('Uttar Pradesh').press_enter()
